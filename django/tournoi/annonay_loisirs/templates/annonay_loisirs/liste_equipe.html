@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="FR">
+
+<head>
+    <meta   charset="UTF-8">
+    <title> TOURNOI DE FOOT </title> 
+</head>
+<body>
+
+<h1>LISTE DES JOUEURS PAR EQUIPE</h1>
+
+
+{% for equipe in liste_equipe %}
+    <p>{{ equipe.nom_equipe }} </p>
+    <table>
+    {% for joueurs in equipe.equipe.all %} <!-- in equipe.equipe.all == in equipe.participant_set.all -->
+        <li>{{ joueurs.prenom }} {{joueurs.nom}}</li>
+    {% endfor %}
+    </table>
+{% endfor %}
+</body>
+
+
+
+</html>

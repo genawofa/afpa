@@ -1,0 +1,13 @@
+client = (Id_client COUNTER, nom_raisonsoc VARCHAR(50), prenomclt VARCHAR(50), adresse VARCHAR(50));
+entreprise = (#Id_client, nomContact VARCHAR(50), prenomContact VARCHAR(50), telContact VARCHAR(50));
+article = (Id_article COUNTER, reference REAL, nomarticle VARCHAR(50), prixUnitaire CURRENCY);
+panier = (Id_panier COUNTER);
+DVD = (#Id_article, nom VARCHAR(50));
+musique = (#Id_article, nom VARCHAR(50));
+ouvrage = (#Id_article, nom VARCHAR(50));
+catalogue = (Id_catalogue COUNTER, reference REAL, nom VARCHAR(50));
+particulier = (#Id_client);
+commande = (Id_commande COUNTER, #Id_panier);
+passer = (#Id_commande, dateCommande DATE, #Id_client);
+référencer = (#Id_article, #Id_catalogue, dateParution VARCHAR(50));
+composer = (#Id_commande, #Id_article, quantitéCommandée INT);

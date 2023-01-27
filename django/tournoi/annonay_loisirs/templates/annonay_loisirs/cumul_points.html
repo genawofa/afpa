@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="FR">
+
+<head>
+    <meta   charset="UTF-8">
+    <title> TOURNOI DE FOOT </title> 
+</head>
+<body>
+
+<h1>Résumer des Match avec leurs scores</h1>
+
+
+{% for match in nombre_point  %}
+    <p>{{ match.equipe_receveuse.nom_equipe }} : {{match.championnat.points_equipe_receveuse}}</p>
+    <p>{{ match.equipe_visiteuse.nom_equipe }} : {{match.championnat.points_equipe_visiteuse}}</p>
+    <p>---------------------------------------------------------------------------------------</p>
+{% endfor %}
+</body>
+
+
+
+</html>
